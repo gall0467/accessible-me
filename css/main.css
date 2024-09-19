@@ -1,6 +1,29 @@
+/* 
+
+
+Requirements
+Using your knowledge of accessibility and the concepts discussed in the class, fix the accessibility issues and enhance the accessibility of the given HTML and CSS.
+
+- Fix any HTML semantic issues.
+    (See HTML File)
+
+- Fix any contrast issues.
+- Add skip links.
+- Add ARIA roles.
+- Add Schema Information where applicable.
+- Setup a GitHub Pages site for your forked repository.
+- Test the GitHub pages URL and submit it for assessment.
+
+
+*/
+
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
-  background-color: grey;
+
+  /* background-color: grey; */
+  /* Grey used yields contrast ratio of 5.31:1 */
+
+  background-color: #767676;
   margin: 0;
   padding: 0;
 }
