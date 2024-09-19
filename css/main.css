@@ -5,9 +5,15 @@ Requirements
 Using your knowledge of accessibility and the concepts discussed in the class, fix the accessibility issues and enhance the accessibility of the given HTML and CSS.
 
 - Fix any HTML semantic issues.
+    - Switched out image inside of div.site-header.
+    - Created Label/Placeholder for forms.
     (See HTML File)
 
 - Fix any contrast issues.
+    (background-color)
+
+* NEXT TASKS.... *
+
 - Add skip links.
 - Add ARIA roles.
 - Add Schema Information where applicable.
@@ -17,13 +23,18 @@ Using your knowledge of accessibility and the concepts discussed in the class, f
 
 */
 
+/* [1 change made]  */
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
+  background-color: #B7B7B7;
+  /* 
+  - Background-color: grey (#808080, behind the default font color of black (#000000), yields a contrast ratio of 5.31:1 (According to WebAIM).
+  - 5.31:1 passes WCAG AA, for regular text
+  - To ensure the corrected contrast ratio passes WCAG AAA, for regular text, I altered the background-color hex code to a lighter gray - #B7B7B7.
 
-  /* background-color: grey; */
-  /* Grey used yields contrast ratio of 5.31:1 */
-
-  background-color: #767676;
+  Original line of code:
+  background-color: #888;
+  */
   margin: 0;
   padding: 0;
 }
@@ -43,6 +54,17 @@ h6 {
   padding: 0 1rem;
 }
 
+/* *** */
+.site-header h1 {
+  font-size: 3rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px 15px;
+  border: 2px solid gray;
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+/* **** */
+
 img {
   width: 100%;
 }
@@ -55,9 +77,24 @@ img {
   padding: 0;
 }
 
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 0;
+}
+
 .main-nav ul li {
   flex: 1;
   text-align: center;
+
+  /* 
+  - Added padding to the bottom the nav buttons so they are spaced a little further from the Image Banner.
+  - This is to ensure that the buttons are clearly visible and aesthetically pleasing.
+  */  
+  justify-content: space-around;
+  padding-bottom: 25px;
 }
 
 .main-nav ul li a {
@@ -87,8 +124,61 @@ form button {
   border: 2px solid black;
   padding: 1rem;
   text-transform: uppercase;
+  background-color: white;
 }
 
 .site-footer {
   padding: 2rem 0;
+}
+
+/* 
+Added media query for... 
+- The purpose of keeping the navigation buttons that far from the banner, but also to keep the buttons centered.
+- Add color to the nav buttons.
+- Space-between, not around.
+- Make the Main Heading stand out "on desktop".
+*/
+
+
+@media screen and (min-width: 950px) {
+  .site-header h1 {
+    font-size: 6rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px 15px;
+    border: 2px solid gray;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  }
+
+
+  .main-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 0;
+    padding-left: 165px;
+    justify-content: space-between;
+  }
+
+  .main-nav ul li {
+  /* 
+  - Added padding to the bottom the nav buttons so they are spaced a little further from the Image Banner.
+  - This is to ensure that the buttons are clearly visible and aesthetically pleasing.
+  */
+  padding-bottom: 50px;
+
+  }
+
+  .main-nav ul li a {
+      /* fixed the position so that in a wider browser, the navigation buttons follow you. */
+    position: fixed;
+
+    /* Added colour to the nav buttons so that as they follow you down the screen you can see them with the background image. */
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px 15px;
+    border: 2px solid gray;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  }
 }
