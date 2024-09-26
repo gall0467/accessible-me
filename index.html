@@ -93,17 +93,23 @@
           ARIA ROLE of Form defines the "contact us" form. 
         -->
         <form action="thanks.html" role="form">
-          <label for="FullName">Full Name:</label>
-          <input type="text" id="FullName" placeholder="Full Name" itemprop="name">
+          <div itemscope itemtype="http://schema.org/Person">
+            <label for="FullName">Full Name:</label>
+            <input type="text" id="FullName" placeholder="Full Name" itemprop="name">
 
-          <label for="EMail">E-Mail:</label>
-          <input type="email" id="EMail" placeholder="E-Mail Address" itemprop="email">
-
-          <!-- <label for="Subject">Subject:</label> -->
+            <label for="EMail">E-Mail:</label>
+            <input type="email" id="EMail" placeholder="E-Mail Address" itemprop="email">
+          </div>
+          <!-- 
+            <label for="Subject">Subject:</label> 
+          -->
           <input type="text" placeholder="Subject">
 
+          <div itemscope itemtype="http://schema.org/Comment">
           <label for="YourMessage">Your Message:</label>
           <textarea id="YourMessage" placeholder="Share your thoughts with us..." itemprop="description"></textarea>
+        </div>
+
 
           <button type="submit">Send</button>
         </form>
@@ -114,9 +120,9 @@
        - ARIA ROLE of ContentInfo defines the footer/copyright of the webpage.
        - Footer for Schema.
      -->
-    <div class="site-footer" id="site-footer" role="contentinfo">
+    <footer itemscope itemtype="http://schema.org/Organization" class="site-footer" id="site-footer" role="contentinfo">
       &copy; <span itemprop="foundingDate">2021</span> Jam Box Studios
-    </div>
+    </footer>
   </div>
 </body>
 
