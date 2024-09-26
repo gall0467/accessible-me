@@ -15,9 +15,16 @@
 
 <body>
   <div class="container">
-    <div class="site-header" id="home">
+    <!-- 
+      ARIA ROLE of Banner defines the header.
+     -->
+    <div class="site-header" id="home" role="banner">
       <h1>Jam Box Studios</h1>
-      <div class="main-nav">
+
+      <!-- 
+         ARIA ROLE of Navigation defines the nav.
+       -->
+      <div class="main-nav" role="navigation">
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">Products</a></li>
@@ -26,6 +33,7 @@
         </ul>
       </div>
       <img src="images/boom-box.jpg" alt="banner of a vintage boom-box" class="banner">
+
       <!-- 
         NOTE: Image link (placekitten) wasn't working, so I put this blue banner instead.
         "Error: An <img> element must have an <alt> attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images." 
@@ -35,11 +43,19 @@
         <img src="https://placekitten.com/1200/900" class="banner">
       -->
     </div>
-    <div class="main-content">
+
+    <!-- 
+      ARIA ROLE of Main defines the main content. 
+    -->
+    <div class="main-content" role="main">
       <h1>Welcome to Jam Box</h1>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
-      <div class="owner">
+
+      <!-- 
+         ARIA ROLE of Region defines important content on the page.
+       -->
+      <div class="owner" role="region">
         <h1>Meet the owner</h1>
         <ul>
           <li>Name: John Doe</li>
@@ -57,7 +73,11 @@
       </div>
       <div class="contact-section">
         <h1>Contact Us</h1>
-        <form action="thanks.html">
+
+        <!-- 
+          ARIA ROLE of Form defines the "contact us" form. 
+        -->
+        <form action="thanks.html" role="form">
           <label for="FullName">Full Name:</label>
           <input type="text" id="FullName" placeholder="Full Name">
 
@@ -74,7 +94,11 @@
         </form>
       </div>
     </div>
-    <div class="site-footer">
+
+    <!-- 
+       ARIA ROLE of ContentInfo defines the footer/copyright of the webpage.
+     -->
+    <div class="site-footer" role="contentinfo">
       &copy; 2021 Jam Box Studios
     </div>
   </div>
