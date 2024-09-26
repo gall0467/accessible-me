@@ -14,17 +14,26 @@
 </head>
 
 <body>
+  <!-- 
+    Them SkipLinks 
+  -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-nav" class="skip-link">Skip to navigation</a>
+  <a href="#contact-section" class="skip-link">Skip to contact form</a>
+  <a href="#site-footer" class="skip-link">Skip to footer</a>
+
   <div class="container">
     <!-- 
-      ARIA ROLE of Banner defines the header.
+      - ARIA ROLE of Banner defines the header.
+      - LocalBuisness schema property
      -->
-    <div class="site-header" id="home" role="banner">
-      <h1>Jam Box Studios</h1>
+    <div class="site-header" id="home" role="banner" itemscope itemtype="https://schema.org/LocalBusiness">
+      <h1 itemprop="name">Jam Box Studios</h1>
 
       <!-- 
          ARIA ROLE of Navigation defines the nav.
        -->
-      <div class="main-nav" role="navigation">
+      <div class="main-nav" id="main-nav" role="navigation">
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">Products</a></li>
@@ -32,7 +41,7 @@
           <li><a href="#">Studio</a></li>
         </ul>
       </div>
-      <img src="images/boom-box.jpg" alt="banner of a vintage boom-box" class="banner">
+      <img src="images/boom-box.jpg" alt="banner of a vintage boom-box" class="banner"  itemprop="image">
 
       <!-- 
         NOTE: Image link (placekitten) wasn't working, so I put this blue banner instead.
@@ -47,31 +56,37 @@
     <!-- 
       ARIA ROLE of Main defines the main content. 
     -->
-    <div class="main-content" role="main">
+    <div class="main-content" id="main-content" role="main">
       <h1>Welcome to Jam Box</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
+      <p><strong style="font-size: 1.5rem;">PRESS TAB FOR SOME SKIP LINK</strong>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
 
       <!-- 
-         ARIA ROLE of Region defines important content on the page.
+         - ARIA ROLE of Region defines important content on the page.
+         - Owner and Address Schema property.
        -->
-      <div class="owner" role="region">
-        <h1>Meet the owner</h1>
+      <div class="owner" role="region" aria-labelledby="owner-heading" itemscope itemtype="https://schema.org/Person">
+        <h1 id="owner-heading">Meet the owner</h1>
         <ul>
-          <li>Name: John Doe</li>
-          <li>Title: CEO</li>
-          <li>Email: johnjoe@jambox.ca</li>
-          <li>Phone: 613-000-0000</li>
+          <li>Name: <span itemprop="name">John Doe</span></li>
+          <li>Title: <span itemprop="jobTitle">CEO</span></li>
+          <li>Email: <a href="mailto:johnjoe@jambox.ca" itemprop="email">johnjoe@jambox.ca</a></li>
+          <li>Phone: <span itemprop="telephone">613-000-0000</span></li>
         </ul>
         <h1>Address</h1>
-        <p>
-          Jambox Studios
-          123 Guitar Road,
-          Musicville, Danceistan
-          B3T 0L0
+        <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+          <span itemprop="streetAddress">123 Guitar Road</span><br>
+          <span itemprop="addressLocality">Musicville</span>, 
+          <span itemprop="addressRegion">Danceistan</span><br>
+          <span itemprop="postalCode">B3T 0L0</span>
         </p>
       </div>
-      <div class="contact-section">
+
+       <!-- 
+        ContactForm Schema property
+      -->
+      <div class="contact-section" id="contact-section">
         <h1>Contact Us</h1>
 
         <!-- 
@@ -79,16 +94,16 @@
         -->
         <form action="thanks.html" role="form">
           <label for="FullName">Full Name:</label>
-          <input type="text" id="FullName" placeholder="Full Name">
+          <input type="text" id="FullName" placeholder="Full Name" itemprop="name">
 
           <label for="EMail">E-Mail:</label>
-          <input type="email" id="EMail" placeholder="E-Mail Address">
+          <input type="email" id="EMail" placeholder="E-Mail Address" itemprop="email">
 
           <!-- <label for="Subject">Subject:</label> -->
           <input type="text" placeholder="Subject">
 
           <label for="YourMessage">Your Message:</label>
-          <textarea id="YourMessage" placeholder="Share your thoughts with us..."></textarea>
+          <textarea id="YourMessage" placeholder="Share your thoughts with us..." itemprop="description"></textarea>
 
           <button type="submit">Send</button>
         </form>
@@ -96,10 +111,11 @@
     </div>
 
     <!-- 
-       ARIA ROLE of ContentInfo defines the footer/copyright of the webpage.
+       - ARIA ROLE of ContentInfo defines the footer/copyright of the webpage.
+       - Footer for Schema.
      -->
-    <div class="site-footer" role="contentinfo">
-      &copy; 2021 Jam Box Studios
+    <div class="site-footer" id="site-footer" role="contentinfo">
+      &copy; <span itemprop="foundingDate">2021</span> Jam Box Studios
     </div>
   </div>
 </body>

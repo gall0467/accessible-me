@@ -132,6 +132,25 @@ form button {
 }
 
 /* 
+CSS for the skip links because i dont like how ugly they are.
+*/
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* 
 Added media query for... 
 - The purpose of keeping the navigation buttons that far from the banner, but also to keep the buttons centered.
 - Add color to the nav buttons.
