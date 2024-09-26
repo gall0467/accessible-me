@@ -14,7 +14,7 @@
 
 <body>
   <div class="container">
-    <div class="site-header">
+    <div class="site-header" id="home">
       <h1>Jam Box Studios</h1>
       <div class="main-nav">
         <ul>
@@ -57,15 +57,17 @@
       <div class="contact-section">
         <h1>Contact Us</h1>
         <form action="thanks.html">
-          <label for="text">Full Name:</label>
-          <input type="text" placeholder="Full Name">
+          <label for="FullName">Full Name:</label>
+          <input type="text" id="FullName" placeholder="Full Name">
 
-          <label for="Email">E-Mail:</label>
-          <input type="email" placeholder="E-Mail Address">
+          <label for="EMail">E-Mail:</label>
+          <input type="email" id="EMail" placeholder="E-Mail Address">
+
+          <!-- <label for="Subject">Subject:</label> -->
           <input type="text" placeholder="Subject">
 
-          <label for="text">Your Message</label>
-          <textarea placeholder="Share your thoughts with us..."></textarea>
+          <label for="YourMessage">Your Message:</label>
+          <textarea id="YourMessage" placeholder="Share your thoughts with us..."></textarea>
 
           <button type="submit">Send</button>
         </form>
